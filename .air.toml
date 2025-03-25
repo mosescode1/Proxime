@@ -1,0 +1,38 @@
+# air.toml
+
+# Root directory to watch for changes
+root = "."
+
+# Specify directories to watch; Air will look in these directories for changes
+[dirs]
+watch = ["cmd", "internal", "pkg", "helper"]
+
+# Main build command to run the app
+# cmd = "go run ./cmd/http/main.go"
+
+# Build configuration
+[build]
+# Command to build the Go project
+cmd = "sh -c 'go build -o tmp/main ./cmd'"
+# Directory where the built binary should be placed
+bin = "tmp/main"
+# Timeout after which the build should stop if not completed (in seconds)
+delay = 1000
+
+# Log output configurations
+log_color = "true"
+log_time = "true"
+
+# Files to ignore changes in
+[exclude_dirs]
+  ignore = ["tmp"]
+
+# Specify directories to exclude from watching
+[exclude_files]
+  ignore = ["*.tmp", "*.md", "*.log"]
+
+# Advanced settings for controlling build behavior
+[settings]
+# Restart the server when a change is detected
+hot_reloading = "true"
+live_reload_delay = 200
