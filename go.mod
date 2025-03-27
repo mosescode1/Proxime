@@ -4,6 +4,7 @@ go 1.23.5
 
 require (
 	github.com/gofiber/fiber/v2 v2.52.6
+	github.com/gorilla/websocket v1.5.3
 	github.com/ilyakaznacheev/cleanenv v1.5.0
 	github.com/labstack/echo-contrib v0.17.2
 	github.com/labstack/echo/v4 v4.13.3

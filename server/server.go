@@ -12,8 +12,11 @@ import (
 func StartServer(config *config.Config) {
 	app := echo.New()
 
-	// Middlewares
+	// NOTE: Middlewares
 	middleware.SetUpMiddleware(app)
+
+	//NOTE: Routes
 	routes.SetUpRoutes(app)
+	routes.SetUpSocketRoutes(app)
 	log.Fatal(app.Start(":" + config.APP_PORT)) // Listen on port 8080
 }
